@@ -3,6 +3,7 @@ import './App.css';
 /* import Greeting from './components/pure/greeting'; */
 /* import GreetingF from './components/pure/greetingF'; */
 import TaskListComponent from './components/container/task_list';
+import Father from './components/container/father';
 /* import GreetingStyled from './components/pure/greetingStyled'; */
 /* import Ejemplo1 from './hooks/Ejemplo1'; */
 /* import Ejemplo2 from './hooks/Ejemplo2'; */
@@ -32,6 +33,8 @@ function App() {
         </Ejemplo4> */}
       {/* <GreetingStyled name="Martin"></GreetingStyled> */}
       {/* </header> */}
+      {/* Gestion de eventos */}
+      {/* <Father></Father> */}
       <TaskListComponent></TaskListComponent>
     </div>
   );

@@ -3,28 +3,53 @@ import { LEVELS } from '../../models/levels.enum';
 import { Task } from '../../models/task.class';
 import TaskComponent from '../pure/task';
 import '../../styles/task.scss';
+import TaskForm from '../pure/forms/taskForm';
 
 
 const TaskListComponent = () => {
 
-    const defaultTask = new Task('Example', 'Default description', false, LEVELS.NORMAL);
+    const defaultTask1 = new Task('Example1', 'Description1', true, LEVELS.NORMAL);
+    const defaultTask2 = new Task('Example2', 'Ddescription2', false, LEVELS.URGENT);
+    const defaultTask3 = new Task('Example3', 'Ddescription3', false, LEVELS.BLOKING);
     //Estado del componente
-    /* const [tasks, setTasks] = useState([defaultTask]);
-    const [loading, setLoading] = useState(true); */
+    const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
+    const [loading, setLoading] = useState(true);
 
     //control del ciclo de vida del componente
-    /* useEffect(() => {
-        console('Task State ghas been modified');
+    useEffect(() => {
+        console.log('Task State ghas been modified');
         setLoading(false);
         return () => {
-            console('TaskList component is going to unmount...');
+            console.log('TaskList component is going to unmount...');
         };
-    }, [tasks]); */
+    }, [tasks]);
 
 
-    /* const changeCompleted = (id) => {
-        console.log('TODO: Cambia estado de una tarea')
-    } */
+    function completeTask(task) {
+        console.log('Complete this Task:', task);
+        const index = tasks.indexOf(task);
+        const temTask = [...tasks];
+        temTask[index].completed = !temTask[index].completed;
+        //we update the state of the component and it will update the new list of task and it will update the
+        // Iteration of the tasks in order to show the task updated
+        setTasks(temTask);
+    }
+
+    function deleteTask(task) {
+        console.log('Delete this Task:', task);
+        const index = tasks.indexOf(task);
+        const temTask = [...tasks];
+        temTask.splice(index, 1);
+        setTasks(temTask);
+    }
+
+    function addTask(task) {
+        console.log('Add this Task:', task);
+        const index = tasks.indexOf(task);
+        const temTask = [...tasks];
+        temTask.push(task);
+        setTasks(temTask);
+    }
 
     return (
         <div>
@@ -47,12 +72,23 @@ const TaskListComponent = () => {
                             </thead>
                             <tbody>
                                 {/* TODO: Iterar sobre una lista de taeras */}
-                                <TaskComponent task={defaultTask}></TaskComponent>
+                                {tasks.map((task, index) => {
+                                    return (
+                                        <TaskComponent
+                                            key={index}
+                                            task={task}
+                                            complete={completeTask}
+                                            remove={deleteTask}
+                                        >
+                                        </TaskComponent>
+                                    )
+                                })}
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+            <TaskForm add={addTask}></TaskForm>
             {/* TODO: Aplicar in For/Map para renderizar una lista */}
             {/* <TaskComponent task={defaultTask}></TaskComponent> */}
         </div>
