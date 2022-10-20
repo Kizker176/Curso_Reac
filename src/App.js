@@ -3,7 +3,7 @@ import './App.css';
 import OptionalRender from './components/pure/optionalRender';
 /* import Greeting from './components/pure/greeting'; */
 /* import GreetingF from './components/pure/greetingF'; */
-/* import TaskListComponent from './components/container/task_list'; */
+import TaskListComponent from './components/container/task_list';
 /* import Father from './components/container/father'; */
 /* import GreetingStyled from './components/pure/greetingStyled'; */
 /* import Ejemplo1 from './hooks/Ejemplo1'; */
@@ -37,9 +37,9 @@ function App() {
       {/* Gestion de eventos */}
       {/* <Father></Father> */}
       {/* Ejemplos de renderisado condicional*/}
-      <OptionalRender></OptionalRender>
+      {/* <OptionalRender></OptionalRender> */}
       {/* PROYECTO FINAL */}
-      {/* <TaskListComponent></TaskListComponent> */}
+      <TaskListComponent></TaskListComponent>
     </div>
   );
 }
