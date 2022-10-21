@@ -1,9 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import OptionalRender from './components/pure/optionalRender';
+import logo from "./logo.svg";
+import "./App.css";
+import OptionalRender from "./components/pure/optionalRender";
 /* import Greeting from './components/pure/greeting'; */
 /* import GreetingF from './components/pure/greetingF'; */
-import TaskListComponent from './components/container/task_list';
+import TaskListComponent from "./components/container/task_list";
+import LoginFormik from "./components/pure/forms/loginFormik";
 /* import Father from './components/container/father'; */
 /* import GreetingStyled from './components/pure/greetingStyled'; */
 /* import Ejemplo1 from './hooks/Ejemplo1'; */
@@ -36,10 +37,15 @@ function App() {
       {/* </header> */}
       {/* Gestion de eventos */}
       {/* <Father></Father> */}
+
       {/* Ejemplos de renderisado condicional*/}
       {/* <OptionalRender></OptionalRender> */}
+
+      {/* Ejemplos de uso den Formik y Yup */}
+      <LoginFormik></LoginFormik>
+
       {/* PROYECTO FINAL */}
-      <TaskListComponent></TaskListComponent>
+      {/* <TaskListComponent></TaskListComponent> */}
     </div>
   );
 }
