@@ -23,7 +23,7 @@ const LoginFormik = () => {
         initialValues={initialCredentials}
         // *** Yup Validation Schema ***
         validationSchema={loginSchema}
-        // *** Yup Validation Schema ***
+        // *** onSubmitt Event ***
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));
           alert(JSON.stringify(values, null, 2));

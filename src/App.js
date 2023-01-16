@@ -5,6 +5,7 @@ import OptionalRender from "./components/pure/optionalRender";
 /* import GreetingF from './components/pure/greetingF'; */
 import TaskListComponent from "./components/container/task_list";
 import LoginFormik from "./components/pure/forms/loginFormik";
+import RegisterFormik from "./components/pure/forms/registerFormik";
 /* import Father from './components/container/father'; */
 /* import GreetingStyled from './components/pure/greetingStyled'; */
 /* import Ejemplo1 from './hooks/Ejemplo1'; */
@@ -42,7 +43,8 @@ function App() {
       {/* <OptionalRender></OptionalRender> */}
 
       {/* Ejemplos de uso den Formik y Yup */}
-      <LoginFormik></LoginFormik>
+      {/* <LoginFormik></LoginFormik> */}
+      <RegisterFormik></RegisterFormik>
 
       {/* PROYECTO FINAL */}
       {/* <TaskListComponent></TaskListComponent> */}
